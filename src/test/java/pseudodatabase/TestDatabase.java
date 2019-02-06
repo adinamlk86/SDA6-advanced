@@ -2,8 +2,7 @@ package pseudodatabase;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pseudodatabase.key.FancyKey;
-import pseudodatabase.key.Key;
+
 import pseudodatabase.record.Record;
 
 public class TestDatabase {
@@ -12,25 +11,21 @@ public class TestDatabase {
     public void testDatabase() {
 
         Database db = new Database();
-        Record account = new BankAccountForDB(6, 500);
-        Record account2 = new BankAccountForDB(12, 400);
-        Record account3 = new BankAccountForDB(31, 4200);
-        Record account4 = new BankAccountForDB(6, 1500);
+        Record a = new BankAccountForDB(500, new IntegerKey(1234));
+        db.insert(a);
+        IntegerKey k = new IntegerKey(567);
+        Record b = new BankAccountForDB(1000, k);
+        db.insert(b);
+        Record r = db.find(k);
+        System.out.println(((BankAccountForDB)r).getFunds());
 
-
-        db.insert(account);
-        db.insert(account2);
-        db.insert(account3);
-        db.insert(account4);
+        Record c = new BankAccountForDB(1500,new IntegerKey(632));
+        db.insert(c);
 
         System.out.println(db.toString());
-
-        Record newAccount = db.find(account3.getKey());
-
-        Assert.assertEquals(account3.getKey(), newAccount.getKey());
-
-        db.delete(account.getKey());
+        db.delete(k);
         System.out.println(db.toString());
+
 
     }
 }

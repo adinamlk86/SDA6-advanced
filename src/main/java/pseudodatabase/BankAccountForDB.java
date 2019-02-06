@@ -1,15 +1,14 @@
 package pseudodatabase;
 
-import pseudodatabase.key.FancyKey;
 import pseudodatabase.key.Key;
 import pseudodatabase.record.Record;
 
 public class BankAccountForDB implements Record {
     private int funds;
-    private Key key;
+    private IntegerKey key;
 
-    public BankAccountForDB(int key, int funds) {
-        this.key = new FancyKey(key);
+    public BankAccountForDB( int funds, Key key) {
+        this.key =(IntegerKey) key;
         this.funds = funds;
         System.out.println("Created a new bank account.");
     }
@@ -36,9 +35,11 @@ public class BankAccountForDB implements Record {
 
     @Override
     public String toString() {
-        return "BankAccount: " +getKey() + ", Funds - " + funds;
+        return "BankAccountForDB{" +
+                "funds=" + funds +
+                ", key=" + key.getInt() +
+                '}';
     }
-
 
     @Override
     public Key getKey() {

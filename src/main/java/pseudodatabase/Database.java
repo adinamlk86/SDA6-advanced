@@ -18,7 +18,7 @@ public class Database {
         if (lastEmptyIndex < 100) {
             data[lastEmptyIndex] = record;
             lastEmptyIndex++;
-            System.out.println("Succesfully inserted record");
+            System.out.println("Succesfully inserted record.");
             return true;
         }
         System.out.println("Error");
