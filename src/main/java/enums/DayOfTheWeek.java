@@ -23,7 +23,7 @@ public class DayOfTheWeek {
                 break;
 
             case FRIDAY:
-                System.out.println(days.FRIDAY.getName());
+                System.out.println(days.FRIDAY);
                 break;
 
             case SATURDAY:
@@ -35,4 +35,6 @@ public class DayOfTheWeek {
                 break;
         }
     }
+
+
 }

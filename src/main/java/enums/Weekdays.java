@@ -14,15 +14,15 @@ public enum Weekdays {
         return Weekdays.valueOf(name);
     }
 
-    public Weekdays getDay(String dayOfWeek){
+    public Weekdays getDay(){
 
-        Weekdays daysOf = Weekdays.DEFAULT;
+        Weekdays daysOf = Weekdays.DEFAULT.getName();
         for(Weekdays w : Weekdays.values()){
-            if(w.name.equals(dayOfWeek)){
-                daysOf = Weekdays.valueOf(dayOfWeek);
+            if(w.name.equals(this.name)){
+                daysOf = Weekdays.valueOf(name);
             }
         }
-        return daysOf;
+        return daysOf.getName();
     }
 }
 
