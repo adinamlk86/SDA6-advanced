@@ -3,6 +3,9 @@ package generics;
 import bankaccount.BankAccount;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestMyClass {
 
     @Test
@@ -15,6 +18,10 @@ public class TestMyClass {
         System.out.println(a.toString());
         System.out.println(b.toString());
         System.out.println(c.toString());
+
+        List<? extends Number> d= new ArrayList<>(); // pt adaugare
+        List<? super Number> e= new ArrayList<>(); // pt consumare
+
 
 
     }
