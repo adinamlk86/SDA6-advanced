@@ -26,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        Person p1 = new Person("Ana", "Banarescu");
+        Person p1 = new Person("Ana", "Banarescu",29);
 
         File file = new File("C:\\Users\\LENOVO\\IdeaProjects\\SDA6-advanced\\src\\main\\resources\\serializable\\file.txt");
 

@@ -8,10 +8,12 @@ public class Person implements Serializable {
 
     private String firstName;
     private String lastName;
+    private int age;
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age=age;
     }
 
     public String getFirstName() {
@@ -30,8 +32,12 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
-        return "Person: " + firstName + " "+ lastName;
+        return "Person: " + firstName + " "+ lastName+" "+ age;
     }
 }
